@@ -10,12 +10,22 @@
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to top, black, black);
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
       color: white;
+      overflow: hidden;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
     .container {
@@ -102,15 +112,17 @@
   </style>
 </head>
 <body>
+  <iframe class="background-video" src="https://www.youtube.com/embed/LWTsZi7priE?autoplay=1&mute=1&loop=1&playlist=LWTsZi7priE&controls=0&showinfo=0&modestbranding=1&rel=0" frameborder="0" allowfullscreen></iframe>
+
   <div class="container">
-    <img id="left-image" src="left.png" alt="Left Image">
+    <img id="left-image" src="LeftImage/left.png" alt="Left Image">
     <div class="content">
-      <img id="title-image" src="title.png" alt="Title">
+      <img id="title-image" src="TittleImage/title.png" alt="Title">
       <div class="description">
         Experience unparalleled performance with our top-tier executor. Designed for efficiency and speed, it ensures flawless execution with robust security features. Perfect for both beginners and professionals, it provides a seamless, intuitive interface tailored to meet all your needs.
       </div>
       <div class="button-container">
-        <button class="button" onclick="window.location.href='https://download1320.mediafire.com/uezqfsovlqwgFzVVPmE_7YCAQvyxeXcfX8dZYFtdHjC9KKf-QcKrKVB4nWb_L1qbTyOFd87FustJ0jSXVf13V27IJPGfqc6BkNfj89r3x0hwoTT4eENXwIXMb0bUgRuzx-aqhiHxYx1-sGi6X1Uu8A8omJV6aMIn_mj8M2_OxQ/83ipfumphml8niw/Debug.rar'">Download Now</button>
+        <button class="button" onclick="downloadFolder()">Download Now</button>
         <button class="button" onclick="window.location.href='https://link-center.net/1289097/slack-key'">Get Key</button>
       </div>
     </div>
@@ -130,6 +142,10 @@
     leftImage.addEventListener('mouseleave', () => {
       leftImage.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
     });
+
+    function downloadFolder() {
+      window.location.href = 'Dowload/';
+    }
   </script>
 </body>
 </html>
