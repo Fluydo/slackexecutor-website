@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executor Download</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to top, gray, black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    #left-image {
+      width: 400px;
+      height: auto;
+      transition: transform 0.1s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    #left-image:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #title-image {
+      width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 18px;
+      margin-bottom: 20px;
+      max-width: 600px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .button {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      background-color: #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #left-image {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      .content {
+        align-items: center;
+        text-align: center;
+      }
+
+      .button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="left-image" src="left.png" alt="Left Image">
+    <div class="content">
+      <img id="title-image" src="title.png" alt="Title">
+      <div class="description">
+        Experience unparalleled performance with our top-tier executor. Designed for efficiency and speed, it ensures flawless execution with robust security features. Perfect for both beginners and professionals, it provides a seamless, intuitive interface tailored to meet all your needs.
+      </div>
+      <div class="button-container">
+        <button class="button" onclick="downloadFolder()">Download Now</button>
+        <button class="button" onclick="window.location.href='https://link-center.net/1289097/slack-key'">Get Key</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const leftImage = document.getElementById('left-image');
+
+    leftImage.addEventListener('mousemove', (e) => {
+      const rect = leftImage.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) / 20;
+      const y = (e.clientY - rect.top - rect.height / 2) / 20;
+
+      leftImage.style.transform = `perspective(800px) rotateX(${-y}deg) rotateY(${x}deg)`;
+    });
+
+    leftImage.addEventListener('mouseleave', () => {
+      leftImage.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+    });
+
+    function downloadFolder() {
+      window.location.href = 'Dowload/';
+    }
+  </script>
+</body>
+</html>
