@@ -18,7 +18,7 @@
       overflow: hidden;
     }
 
-    .background-video {
+    video#background-video {
       position: fixed;
       top: 0;
       left: 0;
@@ -112,17 +112,20 @@
   </style>
 </head>
 <body>
-  <iframe class="background-video" src="https://www.youtube.com/embed/LWTsZi7priE?autoplay=1&mute=1&loop=1&playlist=LWTsZi7priE&controls=0&showinfo=0&modestbranding=1&rel=0" frameborder="0" allowfullscreen></iframe>
+  <video id="background-video" autoplay loop muted>
+    <source src="bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
   <div class="container">
-    <img id="left-image" src="LeftImage/left.png" alt="Left Image">
+    <img id="left-image" src="left.png" alt="Left Image">
     <div class="content">
-      <img id="title-image" src="TittleImage/title.png" alt="Title">
+      <img id="title-image" src="title.png" alt="Title">
       <div class="description">
         Experience unparalleled performance with our top-tier executor. Designed for efficiency and speed, it ensures flawless execution with robust security features. Perfect for both beginners and professionals, it provides a seamless, intuitive interface tailored to meet all your needs.
       </div>
       <div class="button-container">
-        <button class="button" onclick="downloadFolder()">Download Now</button>
+        <button class="button" onclick="window.location.href='https://www.mediafire.com/file/5f103texd8s2p9x/Slake_Executor.rar/file'">Download Now</button>
         <button class="button" onclick="window.location.href='https://link-center.net/1289097/slack-key'">Get Key</button>
       </div>
     </div>
