@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkpoint 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="handleCheckpoint1()">Checkpoint 1</button>
+
+  <script>
+    function handleCheckpoint1() {
+      // Redirect to the first Linkvertise link
+      window.location.href = "google.com"; // Replace with your first Linkvertise link
+    }
+
+    // After completing the Linkvertise step, redirect to the second checkpoint
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("completed") === "true") {
+      window.location.href = "checkpoint2.html";
+    }
+  </script>
+</body>
+</html>
