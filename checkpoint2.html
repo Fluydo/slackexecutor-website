@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkpoint 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="handleCheckpoint2()">Checkpoint 2</button>
+
+  <script>
+    function handleCheckpoint2() {
+      // Redirect to the second Linkvertise link
+      window.location.href = "youtube.com"; // Replace with your second Linkvertise link
+    }
+
+    // After completing the Linkvertise step, display the generated key
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("completed") === "true") {
+      const key = generateKey();
+      alert(`Your key is: ${key}`); // Display the key (for testing purposes)
+      sendKeyToExecutor(key); // Send the key to the executor
+    }
+
+    // Function to generate a random key
+    function generateKey() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.";
+      let key = "Slack-";
+      for (let i = 0; i < 16; i++) {
+        key += chars[Math.floor(Math.random() * chars.length)];
+      }
+      return key;
+    }
+
+    // Function to send the key to the executor
+    function sendKeyToExecutor(key) {
+      // Redirect to the custom URI scheme
+      window.location.href = `myapp://key=${key}`;
+    }
+  </script>
+</body>
+</html>
