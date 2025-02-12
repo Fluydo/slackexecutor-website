@@ -150,5 +150,52 @@
       window.location.href = 'Dowload/';
     }
   </script>
+
+<script>
+    // Linkvertise links for checkpoints
+    const checkpoint1Link = "google.com"; // Replace with your first Linkvertise link
+    const checkpoint2Link = "youtube.com"; // Replace with your second Linkvertise link
+
+    // Function to start the key process
+    function startKeyProcess() {
+      // Redirect to the first checkpoint page
+      window.open("checkpoint1.html", "_blank");
+    }
+
+    // Function to generate a random key
+    function generateKey() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.";
+      let key = "Slack-";
+      for (let i = 0; i < 16; i++) {
+        key += chars[Math.floor(Math.random() * chars.length)];
+      }
+      return key;
+    }
+
+    // Function to send the key to the executor
+    function sendKeyToExecutor(key) {
+      // Redirect to the custom URI scheme
+      window.location.href = `myapp://key=${key}`;
+    }
+
+    // Function to handle the first checkpoint
+    function handleCheckpoint1() {
+      // Redirect to the first Linkvertise link
+      window.location.href = checkpoint1Link;
+    }
+
+    // Function to handle the second checkpoint
+    function handleCheckpoint2() {
+      // Redirect to the second Linkvertise link
+      window.location.href = checkpoint2Link;
+    }
+
+    // Function to display the generated key
+    function displayGeneratedKey() {
+      const key = generateKey();
+      alert(`Your key is: ${key}`); // Display the key (for testing purposes)
+      sendKeyToExecutor(key); // Send the key to the executor
+    }
+  </script>
 </body>
 </html>
